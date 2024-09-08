@@ -4,7 +4,7 @@
 Welcome to the **cseku_apl_24_230218** project! This repository focuses on refactoring source code from previous years, following best practices and modern programming styles that we will explore in this course.
 
 ### Project Structure:
-```
+
 cseku_apl_24_230218/
 │
 └── task1/
@@ -13,7 +13,7 @@ cseku_apl_24_230218/
     ├── DoublyLinkedList_Old.c
     ├── MergeSort_Old.cpp
     └── SegmentedSieve_Old.cpp
-```
+
 
 ### Description:
 The purpose of this repository is to improve code styling and standards, following principles and guidelines covered during the 0714 02 CSE 2100 Advanced Programming Laboratory course. 
