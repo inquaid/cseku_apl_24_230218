@@ -1,3 +1,15 @@
+/**
+ * @file    SegmentedSieve_New.cpp
+ * @brief   Segmented Sieve to generate primes 
+ *
+ * @author  Azmain Inquaid Haque Turjo
+ * @date    September 16, 2024
+ *
+ * @details This program implements the Segmented Sieve to generate all prime numbers
+ *          up to a defined limit.
+ */
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -110,3 +122,4 @@ int main() {
 
     return 0;
 }
+ 
