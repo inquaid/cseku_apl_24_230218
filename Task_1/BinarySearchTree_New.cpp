@@ -9,9 +9,6 @@
  *          and search operations on a binary search tree (BST). The tree stores integer values
  *          and provides both iterative and recursive functions for these operations.
  *
- *
- * @note    Ensure the tree is not empty before calling search or traversal operations.
- *
  */
 
 #include <bits/stdc++.h>
@@ -29,135 +26,201 @@ TreeNode *root = NULL;
 
 // Function declarations
 void insert(int data);
-
+/**
+ * @brief   Inserts a value into the binary search tree.
+ *
+ * @details This function inserts a new value into the binary search tree. If the tree is empty,
+ *          the new value becomes the root. Otherwise, the value is inserted into the correct
+ *          position in the tree based on binary search tree properties.
+ *
+ * @param   data The integer value to insert into the tree.
+ */
 void insertRecursive(TreeNode *current, int data);
-
+/**
+ * @brief   Recursively inserts a value into the binary search tree.
+ *
+ * @param   current The current node being traversed.
+ * @param   data    The integer value to insert into the tree.
+ */
 void inorder();
-
+/**
+ * @brief   Performs an inorder traversal of the binary search tree.
+ *
+ * @details This function prints the nodes of the binary search tree in inorder sequence:
+ *          Left subtree, Root, Right subtree.
+ */
 void inorderTraversal(TreeNode *current);
-
+/**
+ * @brief   Recursively performs inorder traversal of the binary search tree.
+ *
+ * @param   current The current node being traversed.
+ */
 void preorder();
-
+/**
+ * @brief   Performs a preorder traversal of the binary search tree.
+ *
+ * @details This function prints the nodes of the binary search tree in preorder sequence:
+ *          Root, Left subtree, Right subtree.
+ */
 void preorderTraversal(TreeNode *current);
-
+/**
+ * @brief   Recursively performs preorder traversal of the binary search tree.
+ *
+ * @param   current The current node being traversed.
+ */
 void postorder();
-
+/**
+ * @brief   Performs a postorder traversal of the binary search tree.
+ *
+ * @details This function prints the nodes of the binary search tree in postorder sequence:
+ *          Left subtree, Right subtree, Root.
+ */
 void postorderTraversal(TreeNode *current);
-
+/**
+ * @brief   Recursively performs postorder traversal of the binary search tree.
+ *
+ * @param   current The current node being traversed.
+ */
 void bfs();
-
+/**
+ * @brief   Performs a breadth-first search (BFS) traversal of the binary search tree.
+ *
+ * @details This function traverses the binary search tree level by level using a queue,
+ *          and prints the nodes in BFS order.
+ */
 void bfsTraversal(TreeNode *root);
-
+/**
+ * @brief   Performs BFS traversal using a queue.
+ *
+ * @param   root The root node of the binary search tree.
+ */
 bool search(int data);
-
+/**
+ * @brief   Searches for a value in the binary search tree.
+ *
+ * @details This function searches for a given integer value in the binary search tree.
+ *          It returns true if the value is found, false otherwise.
+ *
+ * @param   data The integer value to search for in the tree.
+ *
+ * @return  true if the value is found, false otherwise.
+ */
 bool searchRecursive(TreeNode *current, int data);
+/**
+ * @brief   Recursively searches for a value in the binary search tree.
+ *
+ * @param   current The current node being traversed.
+ * @param   data    The integer value to search for in the tree.
+ *
+ * @return  true if the value is found, false otherwise.
+ */
 
 // Function to insert a value into the binary search tree
-
 void insert(int data) {
-    TreeNode *newNode = new TreeNode;
-    newNode->data = data;
+    TreeNode *newNode = new TreeNode;  // Allocate memory for a new node
+    newNode->data = data;  // Set the data for the new node
 
     if (root == NULL) {
-        root = newNode; // Set as the root if the tree is empty
+        root = newNode;  // If the tree is empty, set the new node as root
         return;
     }
 
-    insertRecursive(root, data); // Insert recursively
+    insertRecursive(root, data);  // Call recursive helper to insert the data at the correct position
 }
 
-// Helper function to recursively insert a node
+// Recursive helper function to insert a value into the binary search tree
 void insertRecursive(TreeNode *current, int data) {
-    if (data <= current->data) {
+    if (data <= current->data) {  // If the data is less than or equal to the current node's data
         if (current->left == NULL) {
-            current->left = new TreeNode{data, NULL, NULL}; // Create a new node in the left subtree
+            current->left = new TreeNode{data, NULL, NULL};  // Create a new node and insert it to the left
             return;
         }
-        insertRecursive(current->left, data); // Recursively insert in the left subtree
-    } else {
+        insertRecursive(current->left, data);  // Recursively insert in the left subtree
+    } else {  // If the data is greater than the current node's data
         if (current->right == NULL) {
-            current->right = new TreeNode{data, NULL, NULL}; // Create a new node in the right subtree
+            current->right = new TreeNode{data, NULL, NULL};  // Create a new node and insert it to the right
             return;
         }
-        insertRecursive(current->right, data); // Recursively insert in the right subtree
+        insertRecursive(current->right, data);  // Recursively insert in the right subtree
     }
 }
 
-// Function to perform inorder traversal
+// Function to perform inorder traversal (Left, Root, Right)
 void inorder() {
-    inorderTraversal(root);
+    inorderTraversal(root);  // Call recursive helper for inorder traversal
     cout << endl;
 }
 
-// Helper function for inorder traversal (Left, Root, Right)
+// Recursive helper function for inorder traversal
 void inorderTraversal(TreeNode *current) {
     if (current == NULL) {
-        return;
+        return;  // Base case: stop if current node is null
     }
 
-    inorderTraversal(current->left);
-    cout << current->data << " ";
-    inorderTraversal(current->right);
+    inorderTraversal(current->left);  // Traverse the left subtree
+    cout << current->data << " ";  // Visit the root (current node)
+    inorderTraversal(current->right);  // Traverse the right subtree
 }
 
-// Function to perform preorder traversal
+// Function to perform preorder traversal (Root, Left, Right)
 void preorder() {
-    preorderTraversal(root);
+    preorderTraversal(root);  // Call recursive helper for preorder traversal
     cout << endl;
 }
 
-// Helper function for preorder traversal (Root, Left, Right)
+// Recursive helper function for preorder traversal
 void preorderTraversal(TreeNode *current) {
     if (current == NULL) {
-        return;
+        return;  // Base case: stop if current node is null
     }
 
-    cout << current->data << " ";
-    preorderTraversal(current->left);
-    preorderTraversal(current->right);
+    cout << current->data << " ";  // Visit the root (current node)
+    preorderTraversal(current->left);  // Traverse the left subtree
+    preorderTraversal(current->right);  // Traverse the right subtree
 }
 
-// Function to perform postorder traversal
+// Function to perform postorder traversal (Left, Right, Root)
 void postorder() {
-    postorderTraversal(root);
+    postorderTraversal(root);  // Call recursive helper for postorder traversal
     cout << endl;
 }
 
-// Helper function for postorder travversal (Left, Right, Root)
+// Recursive helper function for postorder traversal
 void postorderTraversal(TreeNode *current) {
     if (current == NULL) {
-        return;
+        return;  // Base case: stop if current node is null
     }
 
-    postorderTraversal(current->left);
-    postorderTraversal(current->right);
-    cout << current->data << " ";
+    postorderTraversal(current->left);  // Traverse the left subtree
+    postorderTraversal(current->right);  // Traverse the right subtree
+    cout << current->data << " ";  // Visit the root (current node)
 }
 
 // Function to perform breadth-first search (BFS) traversal
 void bfs() {
-    bfsTraversal(root);
+    bfsTraversal(root);  // Call helper function to traverse the tree using BFS
     cout << endl;
 }
 
 // Helper function for BFS traversal using a queue
 void bfsTraversal(TreeNode *root) {
     if (root == NULL) {
-        return;
+        return;  // Return if the tree is empty
     }
-    queue<TreeNode *> q;
-    q.push(root);
 
-    while (q.empty() == false) {
-        TreeNode *current = q.front();
-        q.pop();
+    queue<TreeNode *> q;  // Create a queue to hold nodes for BFS
+    q.push(root);  // Start with the root node
 
-        cout << current->data << " ";
+    while (!q.empty()) {  // Loop until the queue is empty
+        TreeNode *current = q.front();  // Get the front node in the queue
+        q.pop();  // Remove the front node
 
-        if (current->left != NULL) {
+        cout << current->data << " ";  // Visit the current node
+
+        if (current->left != NULL) {  // If left child exists, add it to the queue
             q.push(current->left);
         }
-        if (current->right != NULL) {
+        if (current->right != NULL) {  // If right child exists, add it to the queue
             q.push(current->right);
         }
     }
@@ -166,28 +229,28 @@ void bfsTraversal(TreeNode *root) {
 // Function to search for a value in the tree
 bool search(int data) {
     if (root == NULL) {
-        return false;
+        return false;  // If the tree is empty, return false
     }
     if (root->data == data) {
-        return true;
+        return true;  // If the root contains the value, return true
     }
-    return searchRecursive(root, data);
+    return searchRecursive(root, data);  // Recursively search for the value
 }
 
-// Helper function to recursively search for a value
+// Recursive helper function to search for a value in the tree
 bool searchRecursive(TreeNode *current, int data) {
     if (current == NULL) {
-        return false;
+        return false;  // Base case: value not found
     }
     if (current->data == data) {
-        return true;
+        return true;  // Value found at the current node
     }
     if (current->data < data) {
-        return searchRecursive(current->right, data);
+        return searchRecursive(current->right, data);  // Search the right subtree if data is greater
     } else {
-        return searchRecursive(current->left, data);
+        return searchRecursive(current->left, data);  // Search the left subtree if data is smaller
     }
-    return false;
+    return false;  // Default return false (unreachable in normal conditions)
 }
 
 // Main function to demonstrate tree operations
