@@ -3,6 +3,7 @@ using namespace std;
 
 typedef struct Node
 {
+    
     int data;
     struct Node *left = NULL, *right = NULL;
 } Node;
