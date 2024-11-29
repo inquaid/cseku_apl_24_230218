@@ -14,21 +14,41 @@ cseku_apl_24_230218/
 │   ├── MergeSort_Old.cpp
 │   └── SegmentedSieve_Old.cpp
 │
-└── task2/
-    └── My_Anime_List/
-        ├── src/
-        │   ├── main/
-        │   │   ├── java/
-        │   │   │   ├── model/
-        │   │   │   ├── repository/
-        │   │   │   ├── service/
-        │   │   │   └── ui/
-        │   └── test/
-        │       ├── java/
-        │       │   ├── model/
-        │       │   ├── repository/
-        │       │   └── service/
-        └── README.md
+|── task2/
+|   └── My_Anime_List/
+|       ├── src/
+|       │   ├── main/
+|       │   │   ├── java/
+|       │   │   │   ├── model/
+|       │   │   │   ├── repository/
+|       │   │   │   ├── service/
+|       │   │   │   └── ui/
+|       │   └── test/
+|       │       ├── java/
+|       │       │   ├── model/
+|       │       │   ├── repository/
+|       │       │   └── service/
+|       └── README.md
+│
+└── task3/
+    └── My_Anime_List(MVC)/
+
+        src/
+        ├── model/
+        │   └── Anime.java            
+        ├── repository/
+        │   └── AnimeRepository.java  
+        ├── service/
+        │   └── AnimeService.java     
+        ├── filter/
+        │   ├── FilterStrategy.java   
+        │   ├── GenreFilter.java      
+        │   └── RatingFilter.java    
+        ├── display/
+        │   ├── Displayable.java      
+        │   └── AnimeDisplayService.java 
+        └── Main.java                 
+
 
 ## Tasks Overview
 
