@@ -1,4 +1,3 @@
-```markdown
 # Course Repository: CSE 2100 - Advanced Programming Laboratory
 
 Welcome to the **CSE 2100 - Advanced Programming Laboratory** GitHub repository! This repository hosts a series of tasks designed to enhance programming skills, enforce coding standards, and implement modern software design principles.
