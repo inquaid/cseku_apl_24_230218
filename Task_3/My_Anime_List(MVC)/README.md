@@ -60,19 +60,19 @@ The project strictly adheres to the **MVC architecture** to separate data (Model
 ```
 src/
 ├── model/
-│   └── Anime.java            # Represents an anime with title, genre, and rating
-├── repository/
-│   └── AnimeRepository.java  # Manages storing and retrieving anime
-├── service/
+│   |── Anime.java            # Represents an anime with title, genre, and rating
+|   ├── repository/
+|   |   └── AnimeRepository.java  # Manages storing and retrieving anime
+|   ├── filter/
+|   │   ├── FilterStrategy.java   # Interface for filtering anime
+|   │   ├── GenreFilter.java      # Filters anime by genre
+|   └───└── RatingFilter.java     # Filters anime by rating
+├── control/
 │   └── AnimeService.java     # Business logic for filtering anime
-├── filter/
-│   ├── FilterStrategy.java   # Interface for filtering anime
-│   ├── GenreFilter.java      # Filters anime by genre
-│   └── RatingFilter.java     # Filters anime by rating
-├── display/
+├── view/
 │   ├── Displayable.java      # Interface for displaying anime lists
 │   └── AnimeDisplayService.java # Implementation for displaying anime details
-└── Main.java                 # Main class to demonstrate the project
+└── Main.java                 # test class to demonstrate the project
 ```
 
 ---
