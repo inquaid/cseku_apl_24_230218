@@ -104,6 +104,34 @@ This project can be extended to include API integration for live anime data, a g
 
 ---
 
+### Task 3: My Anime List - MVC Architecture
+
+#### Description
+In Task 3, we build upon the previous task by refactoring the anime list manager to implement the **Model-View-Controller (MVC)** architecture. This architecture separates concerns into three layers, making the application more modular, testable, and scalable.
+
+#### Project Structure
+- **Model**: Contains the core `Anime` class, encapsulating attributes like title, genre, episodes, and rating.
+- **View**: Includes classes responsible for displaying data to the user, like `AnimeDisplayService`.
+- **Controller**: Handles user requests and interacts with the model and view via `AnimeService`.
+- **Repository**: Manages data persistence and retrieval using the `AnimeRepository`.
+
+#### Features
+- **Model**: Encapsulates the core data structure.
+- **View**: Provides flexible display options and adheres to the `Displayable` interface.
+- **Controller**: Implements business logic like filtering and managing anime.
+- **Filters**: Includes reusable strategies for filtering anime by genre and rating.
+
+#### Objective
+To refactor the code into the MVC architecture while ensuring it adheres to clean code practices and SOLID principles.
+
+#### Future Enhancements
+- **Graphical User Interface (GUI)**: Expand the View layer to include a GUI.
+- **Database Integration**: Replace the in-memory repository with a database.
+- **Advanced Filters**: Add additional filtering and sorting capabilities.
+
+---
+
+
 ## Guidelines for Each Task
 
 - **Coding Standards**: Follow the coding standards discussed in class.
