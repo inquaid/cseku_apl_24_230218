@@ -5,14 +5,12 @@ Welcome to the **CSE 2100 - Advanced Programming Laboratory** GitHub repository!
 ## Repository Structure
 
 cseku_apl_24_230218/
-│
 ├── task1/
 │   ├── BinarySearchTree_Old.cpp
 │   ├── DivisorCount_Old.cpp
 │   ├── DoublyLinkedList_Old.c
 │   ├── MergeSort_Old.cpp
 │   └── SegmentedSieve_Old.cpp
-│
 ├── task2/
 │   └── My_Anime_List/
 │       ├── src/
@@ -28,7 +26,6 @@ cseku_apl_24_230218/
 │       │       │   ├── repository/
 │       │       │   └── service/
 │       └── README.md
-│
 └── task3/
     └── My_Anime_List(MVC)/
         ├── src/
