@@ -3,7 +3,7 @@
 Welcome to the **CSE 2100 - Advanced Programming Laboratory** GitHub repository! This repository hosts a series of tasks designed to enhance programming skills, enforce coding standards, and implement modern software design principles.
 
 ## Repository Structure
-
+```
 cseku_apl_24_230218/
 ├── task1/
 │   ├── BinarySearchTree_Old.cpp
@@ -44,6 +44,7 @@ cseku_apl_24_230218/
         │   │   └── AnimeDisplayService.java 
         │   └── Main.java                      
         └── README.md
+```
 
 ## Tasks Overview
 
@@ -145,4 +146,3 @@ Happy coding! 🚀
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
