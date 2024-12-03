@@ -1,3 +1,4 @@
+package main;
 import model.Anime;
 import repository.AnimeRepository;
 import service.AnimeService;
